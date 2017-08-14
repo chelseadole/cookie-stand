@@ -1,5 +1,7 @@
 'use strict';
 
+var workingHours = 14;
+
 var pikeLoc = {
   minCust: 23,
   maxCust: 65,
@@ -10,7 +12,7 @@ var pikeLoc = {
   pikeCookiesDayArr: [],
   storeTotal: 0,
   simulatedCookiesDayArray: function(minCust, maxCust, avgCookies) {
-    for (var i = 0; i <= 13; i++) {
+    for (var i = 0; i <= (workingHours - 1); i++) {
       this.pikeCookieDayArr.push(this.custNumGen(this.minCust, this.maxCust) * this.avgCookies);
     }
   }
@@ -26,7 +28,7 @@ var seatacLoc = {
   seatacCookieDayArr: [],
   storeTotal: 0,
   simulatedCookiesDayArray: function(minCust, maxCust, avgCookies) {
-    for (var i = 0; i <= 13; i++) {
+    for (var i = 0; i <= (workingHours - 1); i++) {
       this.seatacCookieDayArr.push(this.custNumGen(this.minCust, this.maxCust) * this.avgCookies);
     }
   }
@@ -42,7 +44,7 @@ var centerLoc = {
   centerCookieDayArr: [],
   storeTotal: 0,
   simulatedCookiesDayArray: function(minCust, maxCust, avgCookies) {
-    for (var i = 0; i <= 13; i++) {
+    for (var i = 0; i <= (workingHours - 1); i++) {
       this.centerCookieDayArr.push(this.custNumGen(this.minCust, this.maxCust) * this.avgCookies);
     }
   }
@@ -58,7 +60,7 @@ var capitolLoc = {
   capitolCookieDayArr: [],
   storeTotal: 0,
   simulatedCookiesDayArray: function(minCust, maxCust, avgCookies) {
-    for (var i = 0; i <= 13; i++) {
+    for (var i = 0; i <= (workingHours - 1); i++) {
       this.capitolCookieDayArr.push(this.custNumGen(this.minCust, this.maxCust) * this.avgCookies);
     }
   }
@@ -74,8 +76,14 @@ var alkiLoc = {
   alkiCookieDayArr: [],
   storeTotal: 0,
   simulatedCookiesDayArray: function(minCust, maxCust, avgCookies) {
-    for (var i = 0; i <= 13; i++) {
+    for (var i = 0; i <= (workingHours - 1); i++) {
       this.alkiCookieDayArr.push(this.custNumGen(this.minCust, this.maxCust) * this.avgCookies);
     }
   }
 };
+
+document.createElement('ul');
+for (var i = 0; i <= (workingHours - 1); i++) {
+  document.createElement('li');
+  
+}
