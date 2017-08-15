@@ -1,0 +1,45 @@
+* {
+  background-color: rgb(224, 161, 76);
+}
+
+h1 {
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+  font-size: 40px;
+  color: rgb(56, 57, 52);
+}
+
+h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 25px;
+  font-style: italic;
+  color: rgb(56, 57, 52);
+  text-align: center;
+}
+
+#salmonPic {
+  padding-left: 200px;
+}
+
+nav {
+  margin-top: 0;
+  padding: 0;
+  position: fixed;
+  font-family: Georgia;
+  color: rgb(61, 32, 179);
+  float: right;
+}
+
+.stores {
+  font-family: Verdana;
+}
+
+footer {
+text-align: center;
+color: rgb(61, 32, 179);
+}
+
+h3, p {
+  text-align: center;
+  font-family: Georgia;
+}
