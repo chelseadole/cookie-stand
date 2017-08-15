@@ -15,8 +15,8 @@ var pikeLoc = {
   },
   cookieDayArr: [],
   simulatedCookiesDayArray: function() {
-    for (var i = 0; i <= (workingHours - 1); i++) {
-      var tempTotal = Math.round(this.cookieDayArr.push(this.custNumGen(this.minCust, this.maxCust) * this.avgCookies));
+    for (var i = 0; i <= (workingHours); i++) {
+      var tempTotal = this.cookieDayArr.push(Math.round(this.custNumGen(this.minCust, this.maxCust) * this.avgCookies));
       this.totalCookies += this.tempTotal;
     }
   }
@@ -33,8 +33,8 @@ var seatacLoc = {
   cookieDayArr: [],
   totalCookies: 0,
   simulatedCookiesDayArray: function() {
-    for (var i = 0; i <= (workingHours - 1); i++) {
-      var tempTotal = Math.round(this.cookieDayArr.push(this.custNumGen(this.minCust, this.maxCust) * this.avgCookies));
+    for (var i = 0; i <= (workingHours); i++) {
+      var tempTotal = this.cookieDayArr.push(Math.round(this.custNumGen(this.minCust, this.maxCust) * this.avgCookies));
       this.totalCookies += this.tempTotal;
     }
   }
@@ -51,8 +51,8 @@ var centerLoc = {
   cookieDayArr: [],
   totalCookies: 0,
   simulatedCookiesDayArray: function() {
-    for (var i = 0; i <= (workingHours - 1); i++) {
-      var tempTotal = Math.round(this.cookieDayArr.push(this.custNumGen(this.minCust, this.maxCust) * this.avgCookies));
+    for (var i = 0; i <= (workingHours); i++) {
+      var tempTotal = this.cookieDayArr.push(Math.round(this.custNumGen(this.minCust, this.maxCust) * this.avgCookies));
       this.totalCookies += this.tempTotal;
     }
   }
@@ -69,8 +69,8 @@ var capitolLoc = {
   cookieDayArr: [],
   totalCookies: 0,
   simulatedCookiesDayArray: function() {
-    for (var i = 0; i <= (workingHours - 1); i++) {
-      var tempTotal = Math.round(this.cookieDayArr.push(this.custNumGen(this.minCust, this.maxCust) * this.avgCookies));
+    for (var i = 0; i <= (workingHours); i++) {
+      var tempTotal = this.cookieDayArr.push(Math.round(this.custNumGen(this.minCust, this.maxCust) * this.avgCookies));
       this.totalCookies += this.tempTotal;
     }
   }
@@ -87,8 +87,8 @@ var alkiLoc = {
   cookieDayArr: [],
   totalCookies: 0,
   simulatedCookiesDayArray: function() {
-    for (var i = 0; i <= (workingHours - 1); i++) {
-      var tempTotal = Math.round(this.cookieDayArr.push(this.custNumGen(this.minCust, this.maxCust) * this.avgCookies));
+    for (var i = 0; i <= (workingHours); i++) {
+      var tempTotal = this.cookieDayArr.push(Math.round(this.custNumGen(this.minCust, this.maxCust) * this.avgCookies));
       this.totalCookies += this.tempTotal;
     }
   }
