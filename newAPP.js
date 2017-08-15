@@ -47,6 +47,7 @@ var pikeLoc = {
     ul.appendChild(listItems);
   }
 };
+pikeLoc.dailySalesReport();
 //PIKE ENDS
 
 // SEATAC LOCATION
@@ -93,6 +94,7 @@ var seatacLoc = {
     ul.appendChild(listItems);
   }
 };
+seatacLoc.dailySalesReport();
 //SEATAC ENDS
 
 // CENTER LOCATION
@@ -139,7 +141,8 @@ var centerLoc = {
     ul.appendChild(listItems);
   }
 };
-//CENTER ENDS
+centerLoc.dailySalesReport();
+//PIKE ENDS
 
 // CAPITOL HILL LOCATION
 var capitolLoc = {
@@ -185,7 +188,8 @@ var capitolLoc = {
     ul.appendChild(listItems);
   }
 };
-//CAPITOL HILL ENDS
+capitolLoc.dailySalesReport();
+//PIKE ENDS
 
 // ALKI LOCATION
 var alkiLoc = {
@@ -231,10 +235,5 @@ var alkiLoc = {
     ul.appendChild(listItems);
   }
 };
-//ALKI ENDS
-
-pikeLoc.dailySalesReport();
-seatacLoc.dailySalesReport();
-center.dailySalesReport();
-capitolLoc.dailySalesReport();
 alkiLoc.dailySalesReport();
+//PIKE ENDS
