@@ -22,25 +22,49 @@ function storeLocation(storeName, minCust, maxCust, avgCookies) {
     }
   };
 
-  this.dailySalesReport = function () {
-    this.simulatedCookiesDayArray();
-    var salesSection = document.getElementById('sales-section');
-    var salesSectionName = document.createElement('h2');
-    salesSectionName.innerHTML = this.storeName;
-    salesSection.appendChild(salesSectionName);
+  this.makeHeaderFooter = function() {
+    var headerLoc = document.getElementById('sales-table');
+    var headerRow = document.createElement('tr');
+    headerLoc.appendChild(headerRow);
 
-    var list = document.createElement('ul');
-    salesSection.appendChild(list);
+    headerRow.appendChild(document.createElement('td'));
 
-    for (var i = 0; i < (this.timeArray.length); i++) {
-      var listItems = document.createElement('li');
-      listItems.innerHTML = this.timeArray[i] + this.cookieDayArr[i] + ' cookies';
-      list.appendChild(listItems);
+    for (i = 0; i <= (this.timeArray.length - 1); i++) {
+      headerRowContent = document.createElement('td');
+      headerRowContent.innerText = this.timeArray[i];
+      headerRow.appendChild(headerRowContent);
     };
-    var totalList = document.createElement('li');
-    totalList.innerText = 'Total: ' + this.totalCookies + ' cookies';
-    list.appendChild(totalList);
+
+    //PUT CODE HERE TO ATTACH THIS FOOTER TO THE LAST ROW OF GEN DATA
+    var totalCell = document.createElement('tr');
+    totalCell.innerText = "Totals";
+    footerRow.appendChild(totalCell);
+
+    for (i = 0; i <= (this.timeArray.length - 1); i++) {
+      footerRowContent = document.createElement('tr');
+      footerRowContent.innerText =
+    };
   };
+
+  // this.dailySalesReport = function () {
+  //   this.simulatedCookiesDayArray();
+  //   var salesSection = document.getElementById('sales-section');
+  //   var salesSectionName = document.createElement('h2');
+  //   salesSectionName.innerHTML = this.storeName;
+  //   salesSection.appendChild(salesSectionName);
+  //
+  //   var list = document.createElement('ul');
+  //   salesSection.appendChild(list);
+  //
+  //   for (var i = 0; i < (this.timeArray.length); i++) {
+  //     var listItems = document.createElement('li');
+  //     listItems.innerHTML = this.timeArray[i] + this.cookieDayArr[i] + ' cookies';
+  //     list.appendChild(listItems);
+  //   };
+  //   var totalList = document.createElement('li');
+  //   totalList.innerText = 'Total: ' + this.totalCookies + ' cookies';
+  //   list.appendChild(totalList);
+  // };
 };
 
 var pike = new storeLocation('Pike Place', 23, 65, 6.3);
