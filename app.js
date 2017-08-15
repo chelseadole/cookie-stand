@@ -1,13 +1,13 @@
 'use strict';
 
 function storeLocation(storeName, minCust, maxCust, avgCookies) {
-  this.storeName = name;
+  this.storeName = storeName;
   this.minCust = minCust;
   this.maxCust = maxCust;
   this.avgCookies = avgCookies;
   this.cookieDayArr = [];
   this.totalCookies = 0;
-  this.timeArray = ['6am: ', '7am: ', '8am: ','9am: ', '10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: ', '8pm: '];
+  this.timeArray = ['6am: ', '7am: ', '8am: ','9am: ', '10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: '];
   this.custNumGen = function() {
     return Math.floor(Math.random() * (this.maxCust - this.minCust)) + 1;
   };
@@ -24,19 +24,23 @@ function storeLocation(storeName, minCust, maxCust, avgCookies) {
 
   this.dailySalesReport = function () {
     this.simulatedCookiesDayArray();
-    var location = document.getElementById('sales-section');
-    var locationName = document.createElement('h2');
-    locationName.innerHTML = this.storeName;
-    location.appendChild(locationName);
+    var salesSection = document.getElementById('sales-section');
+    var salesSectionName = document.createElement('h2');
+    salesSectionName.innerHTML = this.storeName;
+    salesSection.appendChild(salesSectionName);
 
     var list = document.createElement('ul');
-    location.appendChild(list);
+    salesSection.appendChild(list);
 
     for (var i = 0; i < (this.timeArray.length); i++) {
       var listItems = document.createElement('li');
       listItems.innerHTML = this.timeArray[i] + this.cookieDayArr[i] + ' cookies';
       list.appendChild(listItems);
-    }
+    };
+    var totalList = document.createElement('li');
+    totalList.innerText = 'Total: ' + this.totalCookies + ' cookies';
+    list.appendChild(totalList);
+  };
 };
 
 var pike = new storeLocation('Pike Place', 23, 65, 6.3);
