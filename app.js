@@ -84,14 +84,14 @@ var makeFooter = function() {
 
   for (var i = 0; i < (timeArray.length); i++) {
     var footerRowContent = document.createElement('td');
-
-    for (var i = 0; i < storeNames.length; i++) {
-      console.log('cookies day', simulatedCookiesDayArray);
-      console.log('store total cookies', storeTotalCookies);
-      footerRowContent.innerText = storeNames[i].simulatedCookiesDayArray().tempTotal;
-    }
-    // footerRowContent.innerText = this.storeTotalCookies;
-    footerRow.appendChild(footerRowContent);
+    //
+    // for (var i = 0; i < storeNames.length; i++) {
+    //   console.log('cookies day', simulatedCookiesDayArray);
+    //   console.log('store total cookies', storeTotalCookies);
+    //   footerRowContent.innerText = storeNames[i].simulatedCookiesDayArray().tempTotal;
+    // }
+    // // footerRowContent.innerText = this.storeTotalCookies;
+    // footerRow.appendChild(footerRowContent);
   };
 };
 
