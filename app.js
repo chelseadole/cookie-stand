@@ -11,7 +11,7 @@ function storeLocation(storeName, minCust, maxCust, avgCookies) {
   this.avgCookies = avgCookies;
   this.cookieDayArr = [];
   this.totalCookies = 0;
-  this.dayCookiesTotal = [];
+  this.hourlyTotals = [];
   this.timeArray = ['6am: ', '7am: ', '8am: ','9am: ', '10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: '];
   stores.push(this);
 
