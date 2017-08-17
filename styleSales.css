@@ -1,0 +1,22 @@
+* {
+  font-family: Verdana;
+}
+
+h1 {
+  text-align: center;
+  font-size: 28px;
+  color: darkslategrey;
+}
+
+h3 {
+  font-style: italic;
+}
+
+tr, td {
+  border: 1px solid black;
+  padding: 4px;
+}
+
+td:hover {
+  background-color: #a39a9a;
+}

@@ -84,17 +84,16 @@ var makeFooter = function() {
 
   for (var i = 0; i < (timeArray.length); i++) {
     var footerRowContent = document.createElement('td');
-
-    for (var i = 0; i < storeNames.length; i++) {
-      console.log('cookies day', simulatedCookiesDayArray);
-      console.log('store total cookies', storeTotalCookies);
-      footerRowContent.innerText = storeNames[i].simulatedCookiesDayArray().tempTotal;
-    }
-    // footerRowContent.innerText = this.storeTotalCookies;
-    footerRow.appendChild(footerRowContent);
+    //
+    // for (var i = 0; i < storeNames.length; i++) {
+    //   console.log('cookies day', simulatedCookiesDayArray);
+    //   console.log('store total cookies', storeTotalCookies);
+    //   footerRowContent.innerText = storeNames[i].simulatedCookiesDayArray().tempTotal;
+    // }
+    // // footerRowContent.innerText = this.storeTotalCookies;
+    // footerRow.appendChild(footerRowContent);
   };
 };
-
 new StoreLocation('Pike Place', 23, 65, 6.3);
 new StoreLocation('SeaTac Airport', 3, 24, 1.2);
 new StoreLocation('Seattle Center', 11, 38, 3.7);
@@ -109,3 +108,15 @@ for (var i = 0; i < stores.length; i++) {
 }
 
 makeFooter();
+
+var submit = document.getElementById('form');
+
+submit.addEventListener('submit', function(event){
+  event.preventDefault();
+  var newestStore = new StoreLocation(this.elements['storeLoc'].value, parseInt(this.elements['minCust'].value), parseInt(this.elements['maxCust'].value), parseInt(this.elements['avgCust'].value));
+  newestStore.simulatedCookiesDayArray();
+  newestStore.makeBody();
+  this.reset();
+  console.log(newestStore);
+}
+);
