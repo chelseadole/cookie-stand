@@ -110,8 +110,13 @@ for (var i = 0; i < stores.length; i++) {
 makeFooter();
 
 var submit = document.getElementById('form');
+
 submit.addEventListener('submit', function(event){
-  var newestStore = new StoreLocation(submit.elements.storeLoc, submit.elements.minCust, submit.elements.maxCust, submit.elements.avgCust);
   event.preventDefault();
+  var newestStore = new StoreLocation(this.elements['storeLoc'].value, parseInt(this.elements['minCust'].value), parseInt(this.elements['maxCust'].value), parseInt(this.elements['avgCust'].value));
+  newestStore.simulatedCookiesDayArray();
+  newestStore.makeBody();
+  this.reset();
   console.log(newestStore);
-});
+}
+);

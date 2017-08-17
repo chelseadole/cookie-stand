@@ -17,10 +17,6 @@ tr, td {
   padding: 4px;
 }
 
-tr {
-  background-color: white;
-}
-
 tr:nth-child(even),  {
   background-color: #f2f2f2
 }
