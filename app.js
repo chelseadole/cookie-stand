@@ -70,9 +70,7 @@ var makeHeader = function() {
 };
 
 var makeFooter = function() {
-
   var allCookiesEver = 0;
-  var storeTotalCookies = 0;
 
   var myTable = document.getElementById('createdTable');
   var footerRow = document.createElement('tr');
@@ -82,18 +80,26 @@ var makeFooter = function() {
   firstFooterCell.innerText = 'Totals';
   footerRow.appendChild(firstFooterCell);
 
-  for (var i = 0; i < (timeArray.length); i++) {
-    var footerRowContent = document.createElement('td');
-    //
-    // for (var i = 0; i < storeNames.length; i++) {
-    //   console.log('cookies day', simulatedCookiesDayArray);
-    //   console.log('store total cookies', storeTotalCookies);
-    //   footerRowContent.innerText = storeNames[i].simulatedCookiesDayArray().tempTotal;
-    // }
-    // // footerRowContent.innerText = this.storeTotalCookies;
-    // footerRow.appendChild(footerRowContent);
-  };
+  // for (var hour = 0; hour < timeArray.length; hour++) {
+  //   var total = 0;
+  //   for (var s = 0; s < stores.length; s++) {
+  //     total += stores[s].simulatedCookiesDayArray.storeTotalCookies;
+  //   }
+  //   var totalCel = createElement('td');
+  //   totalCel.innerText = total;
+  //   allCookiesEver += total;
+  //   footerRow.appendChild(totalCel);
+  // }
+  var rightCel = document.createElement('td');
+  rightCel.innerText = allCookiesEver;
+  footerRow.appendChild(rightCel);
 };
+//
+//   for (var i = 0; i < (timeArray.length); i++) {
+//     var footerRowContent = document.createElement('td');
+//   };
+// };
+
 new StoreLocation('Pike Place', 23, 65, 6.3);
 new StoreLocation('SeaTac Airport', 3, 24, 1.2);
 new StoreLocation('Seattle Center', 11, 38, 3.7);
@@ -109,14 +115,14 @@ for (var i = 0; i < stores.length; i++) {
 
 makeFooter();
 
-var submit = document.getElementById('form');
-
-submit.addEventListener('submit', function(event){
-  event.preventDefault();
-  var newestStore = new StoreLocation(this.elements['storeLoc'].value, parseInt(this.elements['minCust'].value), parseInt(this.elements['maxCust'].value), parseInt(this.elements['avgCust'].value));
+var addNewStore = function(event) {
+  // event.preventDefault();
+  var newestStore = new StoreLocation(form.elements['storeLoc'].value, parseInt(form.elements['minCust'].value), parseInt(form.elements['maxCust'].value), parseFloat(form.elements['avgCust'].value));
   newestStore.simulatedCookiesDayArray();
   newestStore.makeBody();
   this.reset();
   console.log(newestStore);
-}
-);
+};
+
+var submit = document.getElementById('form');
+submit.addEventListener('submit', addNewStore());
