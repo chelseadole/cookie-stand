@@ -1,7 +1,7 @@
 'use strict';
 
 var stores = [];
-var timeArray = ['6am: ', '7am: ', '8am: ','9am: ', '10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: '];
+var timeArray = ['6:00am ', '7:00am ', '8:00am ','9:00am ', '10:00am ', '11:00am ', '12:00pm ', '1:00pm ', '2:00pm ', '3:00pm ', '4:00pm ', '5:00pm ', '6:00pm ', '7:00pm '];
 var storeNames = ['1st and Pike', 'SeaTac Airport', 'Seattle Center', 'Capitol Hill', 'Alki'];
 
 function StoreLocation(storeName, minCust, maxCust, avgCookies) {
@@ -74,6 +74,7 @@ var makeFooter = function() {
 
   var myTable = document.getElementById('createdTable');
   var footerRow = document.createElement('tr');
+  footerRow.id = 'finalRow';
   myTable.appendChild(footerRow);
 
   var firstFooterCell = document.createElement('td');
@@ -115,14 +116,19 @@ for (var i = 0; i < stores.length; i++) {
 
 makeFooter();
 
-var addNewStore = function(event) {
-  // event.preventDefault();
-  var newestStore = new StoreLocation(form.elements['storeLoc'].value, parseInt(form.elements['minCust'].value), parseInt(form.elements['maxCust'].value), parseFloat(form.elements['avgCust'].value));
+function addNewStore (event) {
+  event.preventDefault();
+  var newestStore = new StoreLocation();
+  newestStore.storeName = this.elements['storeName'].value;
+  newestStore.minCust = parseInt(this.elements['minCust'].value);
+  newestStore.maxCust = parseInt(this.elements['maxCust'].value);
+  newestStore.avgCookies = parseFloat(this.elements['avgCust'].value);
   newestStore.simulatedCookiesDayArray();
+  var rowToDelete = document.getElementById('finalRow').remove();
   newestStore.makeBody();
+  makeFooter();
   this.reset();
-  console.log(newestStore);
 };
 
 var submit = document.getElementById('form');
-submit.addEventListener('submit', addNewStore());
+submit.addEventListener('submit', addNewStore);

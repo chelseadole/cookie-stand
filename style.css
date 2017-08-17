@@ -1,12 +1,16 @@
-* {
+body {
   background-color: rgb(224, 161, 76);
 }
 
 h1 {
+  align-self: center;
+  position: fixed;
+  padding-top: 80px;
+  padding-left: 38%;
   font-family: 'Oswald', sans-serif;
-  text-align: center;
-  font-size: 40px;
+  font-size: 46px;
   color: rgb(56, 57, 52);
+  z-index: 1;
 }
 
 h2 {
@@ -14,19 +18,26 @@ h2 {
   font-size: 25px;
   font-style: italic;
   color: rgb(56, 57, 52);
+  float: right;
   text-align: center;
+  margin: 20px;
+  width: 230px;
 }
 
 #salmonPic {
-  padding-left: 200px;
+  padding-left: 25%;
+  position: relative;
+  margin: 0;
 }
 
 nav {
-  margin-top: 0;
+  margin: 0;
+  border-radius: 0% 0% 12% 0%;
   padding: 0;
   position: fixed;
   font-family: Georgia;
-  color: rgb(61, 32, 179);
+  color: rgba(47, 50, 48, 0.97);
+  background-color: rgba(208, 103, 18, 0.85);
   float: right;
 }
 
@@ -34,16 +45,19 @@ nav {
   font-family: Verdana;
 }
 
-locations {
+#locationsAndStores {
   float: left;
+  margin-left: 8px;
+  text-align: left;
+  font-family: Georgia
 }
 
 footer {
 text-align: center;
+font-family: Georgia;
 color: rgb(61, 32, 179);
 }
 
-h3, p {
-  text-align: center;
-  font-family: Georgia;
+ul {
+  list-style-type: none;
 }
