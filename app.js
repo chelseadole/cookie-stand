@@ -94,7 +94,6 @@ var makeFooter = function() {
     // footerRow.appendChild(footerRowContent);
   };
 };
-
 new StoreLocation('Pike Place', 23, 65, 6.3);
 new StoreLocation('SeaTac Airport', 3, 24, 1.2);
 new StoreLocation('Seattle Center', 11, 38, 3.7);
@@ -109,3 +108,10 @@ for (var i = 0; i < stores.length; i++) {
 }
 
 makeFooter();
+
+var submit = document.getElementById('form');
+submit.addEventListener('submit', function(event){
+  var newestStore = new StoreLocation(submit.elements.storeLoc, submit.elements.minCust, submit.elements.maxCust, submit.elements.avgCust);
+  event.preventDefault();
+  console.log(newestStore);
+});
