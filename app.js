@@ -1,7 +1,7 @@
 'use strict';
 
 var stores = [];
-var timeArray = ['6am: ', '7am: ', '8am: ','9am: ', '10am: ', '11am: ', '12pm: ', '1pm: ', '2pm: ', '3pm: ', '4pm: ', '5pm: ', '6pm: ', '7pm: '];
+var timeArray = ['6:00am ', '7:00am ', '8:00am ','9:00am ', '10:00am ', '11:00am ', '12:00pm ', '1:00pm ', '2:00pm ', '3:00pm ', '4:00pm ', '5:00pm ', '6:00pm ', '7:00pm '];
 var storeNames = ['1st and Pike', 'SeaTac Airport', 'Seattle Center', 'Capitol Hill', 'Alki'];
 
 function StoreLocation(storeName, minCust, maxCust, avgCookies) {
@@ -70,30 +70,32 @@ var makeHeader = function() {
 };
 
 var makeFooter = function() {
-
   var allCookiesEver = 0;
-  var storeTotalCookies = 0;
 
   var myTable = document.getElementById('createdTable');
   var footerRow = document.createElement('tr');
+  footerRow.id = 'finalRow';
   myTable.appendChild(footerRow);
 
   var firstFooterCell = document.createElement('td');
   firstFooterCell.innerText = 'Totals';
   footerRow.appendChild(firstFooterCell);
 
-  for (var i = 0; i < (timeArray.length); i++) {
-    var footerRowContent = document.createElement('td');
-    //
-    // for (var i = 0; i < storeNames.length; i++) {
-    //   console.log('cookies day', simulatedCookiesDayArray);
-    //   console.log('store total cookies', storeTotalCookies);
-    //   footerRowContent.innerText = storeNames[i].simulatedCookiesDayArray().tempTotal;
-    // }
-    // // footerRowContent.innerText = this.storeTotalCookies;
-    // footerRow.appendChild(footerRowContent);
-  };
+  for (var hour = 0; hour < timeArray.length; hour++) {
+    var total = 0;
+    for (var s = 0; s < stores.length; s++) {
+      total += stores[s].cookieDayArr[hour];
+    }
+    var totalCel = document.createElement('td');
+    totalCel.innerText = total;
+    allCookiesEver += total;
+    footerRow.appendChild(totalCel);
+  }
+  var rightCel = document.createElement('td');
+  rightCel.innerText = allCookiesEver;
+  footerRow.appendChild(rightCel);
 };
+
 new StoreLocation('Pike Place', 23, 65, 6.3);
 new StoreLocation('SeaTac Airport', 3, 24, 1.2);
 new StoreLocation('Seattle Center', 11, 38, 3.7);
@@ -109,14 +111,19 @@ for (var i = 0; i < stores.length; i++) {
 
 makeFooter();
 
-var submit = document.getElementById('form');
-
-submit.addEventListener('submit', function(event){
+function addNewStore (event) {
   event.preventDefault();
-  var newestStore = new StoreLocation(this.elements['storeLoc'].value, parseInt(this.elements['minCust'].value), parseInt(this.elements['maxCust'].value), parseInt(this.elements['avgCust'].value));
+  var newestStore = new StoreLocation();
+  newestStore.storeName = this.elements['storeName'].value;
+  newestStore.minCust = parseInt(this.elements['minCust'].value);
+  newestStore.maxCust = parseInt(this.elements['maxCust'].value);
+  newestStore.avgCookies = parseFloat(this.elements['avgCust'].value);
   newestStore.simulatedCookiesDayArray();
+  var rowToDelete = document.getElementById('finalRow').remove();
   newestStore.makeBody();
+  makeFooter();
   this.reset();
-  console.log(newestStore);
-}
-);
+};
+
+var submit = document.getElementById('form');
+submit.addEventListener('submit', addNewStore);

@@ -4,17 +4,23 @@
     <meta charset="utf-8">
     <title>Sales Projections</title>
     <link rel="stylesheet" href="styleSales.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
   </head>
   <body>
-    <h1>Salmon Cookies Sales Projections</h1>
+    <div id="topImage">
+      <h1><strong>Pat's Salmon Cookies!</strong></h1>
+      <img id="salmonPic" src="imgs/salmon.png" alt="Fresh salmon">
+    </div>
+
+    <h2>Cookie Sales Projections</h2>
     <section id="sales-table">
     </section>
     <h3>Add New Store Data:</h3>
     <form id="form">
       <table>
         <tr>
-          <td><label for="storeLoc">New Store Location:  </label></td>
-          <td><input type="text" name="title" class="field" placeholder="Street/Neighborhood" required /></td>
+          <td><label for="storeName">New Store Location:  </label></td>
+          <td><input type="text" name="storeName" class="field" placeholder="Street/Neighborhood" required /></td>
         </tr>
         <tr>
           <td><label for="minCust">Min Customers/Hour:  </label></td>
@@ -26,7 +32,7 @@
         </tr>
         <tr>
           <td><label for="avgCust">Average Cookies/Customer:  </label></td>
-          <td><input type="number" name="avgCust" class="field" placeholder="Average cookies/customer" required /></td>
+          <td><input type="number" step="0.1" name="avgCust" class="field" placeholder="Average cookies/customer" required /></td>
         </tr>
       </table>
       <input type="submit" value="Add to Table"></td>
@@ -35,49 +41,3 @@
   <script src="app.js">
   </script>
 </html>
-
-        <!-- <tr>
-          <td><label for="password">Sekret: </label></td>
-          <td><input type="password" name="password" class="field" /></td>
-        </tr> -->
-        <!-- <tr>
-          <td><label for="radio">Choose one of these:</label></td>
-          <td>
-            <input type="radio" name="choice" value="red" />Red
-            <input type="radio" name="choice" value="blue" checked />Blue
-            <input type="radio" name="choice" value="green" />Green
-          </td>
-        </tr> -->
-        <!-- <tr>
-          <td><label for="theCheckbox">Choose as many as you like:</label></td>
-          <td>
-            <input type="checkbox" name="theCheckbox" value="steak" />Steak
-            <input type="checkbox" name="theCheckbox" value="eggs" checked disabled />Eggs
-            <input type="checkbox" name="theCheckbox" value="salad" />Salad
-          </td>
-        </tr>
-        <tr>
-          <td><label for="dropdown">Choose one:</label></td>
-          <td>
-            <select name="dropdown">
-              <option value="" disabled>---Select One of These---</option>
-              <option value="foo">Foo</option>
-              <option value="bar">Bar</option>
-              <option value="bang">Bang</option>
-              <option value="bash" disabled>Bash</option>
-            </select>
-            *
-          </td>
-        </tr>
-        <tr>
-          <td><label for="multibox">Choose one or more:</label></td>
-          <td>
-            <select name="multibox" multiple>
-              <option value="" selected>--Select One or More of These---</option>
-              <option value="foo">Foo</option>
-              <option value="bar">Bar</option>
-              <option value="bang">Bang</option>
-              <option value="bash" disabled>Bash</option>
-            </select>
-          </td>
-        </tr> -->

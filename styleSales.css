@@ -1,15 +1,34 @@
-* {
-  font-family: Verdana;
-}
 
 h1 {
+  align-self: center;
+  position: absolute;
+  padding-top: 95px;
+  padding-left: 38%;
+  font-family: 'Pacifico', cursive;
+  font-size: 37px;
+  color: rgb(38, 38, 36);
+  z-index: 1;
+}
+
+h2 {
   text-align: center;
   font-size: 28px;
   color: darkslategrey;
+  font-family: Verdana;
 }
 
 h3 {
   font-style: italic;
+}
+
+#salmonPic {
+  padding-left: 23%;
+  position: relative;
+  margin: 0;
+}
+
+table {
+  background-color: #F5F0EF;
 }
 
 tr, td {
@@ -19,4 +38,8 @@ tr, td {
 
 td:hover {
   background-color: #a39a9a;
+}
+
+body {
+  background-color: rgb(224, 161, 76);
 }
