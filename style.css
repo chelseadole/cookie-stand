@@ -9,9 +9,9 @@ h1 {
   align-self: center;
   position: absolute;
   padding-top: 80px;
-  padding-left: 38%;
-  font-family: 'Oswald', sans-serif;
-  font-size: 46px;
+  padding-left: 37%;
+  font-family: 'Pacifico', cursive;
+  font-size: 40px;
   color: rgb(38, 38, 36);
   z-index: 1;
 }
@@ -55,6 +55,12 @@ nav {
   background-color: rgba(212, 232, 49, 0.85);
   padding: 5px;
   border-radius: 10%;
+}
+
+footer {
+text-align: center;
+font-family: Georgia;
+color: rgb(61, 32, 179);
 }
 
 ul {
